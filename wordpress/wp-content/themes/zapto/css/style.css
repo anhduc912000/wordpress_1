@@ -1,0 +1,133 @@
+*{
+    margin:0; padding:0;
+}
+
+.menu ul.navbar-nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.menu ul.navbar-nav li.nav-item a {
+    color: #fff;
+    transition: all 0.5s ease 0s;
+}
+
+.menu ul.navbar-nav li.nav-item:hover a, .menu ul.navbar-nav li.nav-item:focus a {
+    color: #5be8cd;
+}
+
+.menu ul.navbar-nav li.nav-item.active a {
+    color: #5be8cd;
+    display: block;
+    position: relative;
+}
+
+.menu ul.navbar-nav li.nav-item.active a:after {
+    position: absolute;
+    content: "";
+    background-color: #5be8cd;
+    height: 3px;
+    width: 35px;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.menu ul.navbar-nav li.nav-item {
+    padding-right: 14px;
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide{position: absolute;top: 0;left: 0;width: 100%;height: auto;}
+.menu{position: absolute;z-index: 1;top: 0;left: 0;width: 100%; margin-top: 47px;}
+.menu a.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.menu a.navbar-brand:hover, .menu a.navbar-brand:visited {
+    color: #fff;
+}
+
+.menu a.navbar-brand span {
+    color: #5be8cd;
+}
+body{
+   /* height: 100%;
+    width: 100%;*/
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.navbar-light {
+    background: transparent!important;
+}
+.carousel-indicators{ display: none; }
+.carousel-control-prev-icon, .carousel-control-next-icon{opacity: 0}
+.slide:hover .carousel-control-prev-icon{
+    opacity: 0;
+    animation: leftTo 0.7s forwards;
+}
+@-webkit-keyframes leftTo{
+    0%{transform: translateX(-40px); opacity: 0;}
+    100%{transform: translateX(0); opacity: 1;}
+}
+.slide:hover .carousel-control-next-icon{
+    opacity: 0;
+    animation: rightTo 0.7s forwards;
+}
+@-webkit-keyframes rightTo{
+    from{transform: translateX(40px); opacity: 0;}
+    to{transform: translateX(0); opacity: 1;}
+}
+.slogan{
+    position: relative;
+    color: #fff;
+    padding-top: 17rem;
+}
+
+.slogan h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+.slogan span {
+    color: #5be8cd;
+}
+
+.slogan h2 {
+    font-size: 3rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+.slogan a:visited{
+    color: #141414;
+}
+.btn-buytheme, .btn-contact{
+    color: #141414;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.5s ease 0s;
+    border-radius: 20px;
+    padding: 10px 40px;
+    text-transform: capitalize;
+}
+.btn-contact{ background: #5be8cd; }
+.btn-buytheme{background: #fff;}
+.btn-buytheme:hover, .btn-contact:hover{
+    background-color: #127c68;
+    color: #fff;
+}
