@@ -70,6 +70,13 @@
 			$text_1_span = get_field('text-1-span');
 			$text_3_span = get_field('text-3-span');
 			$slider = get_field('slider-pic1');
+			$slider1 = get_field('slide-pic2');
+			$slider2 = get_field('slide-pic3');
+
+			$button_text_1 = get_field('button_text_1');
+			$link_text_1 = get_field('link_text_1');
+			$button_text_2 = get_field('button_text_2');
+			$link_text_2 = get_field('link_text_2');
 
 		?>
 
@@ -81,13 +88,13 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="https://demo.themelocation.com/zapto/images/slider/1.jpg" alt="First slide">
+					<img class="d-block w-100" src="<?php echo $slider['url'] ;?>"  alt="First slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="https://demo.themelocation.com/zapto/images/slider/4.jpg" alt="Second slide">
+					<img class="d-block w-100" src="<?php echo $slider1['url'] ;?>" alt="Second slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="https://demo.themelocation.com/zapto/images/slider/3.jpg" alt="Third slide">
+					<img class="d-block w-100" src="<?php echo $slider2['url'] ;?>" alt="Third slide">
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -106,8 +113,12 @@
 				<h2><?php echo $text_1 ; ?><span> <?php echo $text_1 ; ?></span></h2>
 				<h1><?php echo $text_2 ; ?></h1>
 				<h2><span><?php echo $text_3_span ; ?></span> <?php echo $text_3 ; ?></h2>
-				<a href="#" class="btn btn-buytheme">buy Theme</a>
-				<a href="#" class="btn btn-contact">Contact Us</a>
+				<?php if(!empty($button_text_1)){?>
+					<a href="<?php echo $link_text_1  ; ?>" class="btn btn-buytheme"><?php echo $button_text_1 ; ?></a>
+				<?php } ?>
+				<?php if(!empty($button_text_2)){?>
+					<a href="<?php echo $link_text_2 ; ?>" class="btn btn-contact"><?php echo $button_text_2 ; ?></a>
+				<?php } ?>
 			</div>
 			
 		</div>
