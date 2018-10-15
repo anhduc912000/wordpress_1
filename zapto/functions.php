@@ -26,6 +26,7 @@ if ( ! function_exists( 'zapto_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'custom-logo' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -34,6 +35,16 @@ if ( ! function_exists( 'zapto_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+		register_sidebar(  array(
+					'name'          => __( 'Sidebar content_right', 'theme_text_domain' ),
+					'id'            => 'content_right',    // ID should be LOWERCASE  ! ! !
+					'description'   => '',
+				        'class'         => '',
+					'before_widget' => '<li id="%1$s" class="widget %2$s">',
+					'after_widget'  => '</li>',
+					'before_title'  => '<h2 class="widgettitle">',
+					'after_title'   => '</h2>' 
+				)); 
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -108,10 +119,10 @@ function zapto_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'zapto' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'zapto' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s single-sidebar blue-line">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title blue-line">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'zapto_widgets_init' );
@@ -199,3 +210,4 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+

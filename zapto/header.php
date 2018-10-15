@@ -8,7 +8,8 @@
  *
  * @package zapto
  */
-
+$logo = get_theme_mod('custom_logo');
+$logo_editted = wp_get_attachment_image_src( $logo, 'full' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -24,23 +25,31 @@
 	<link rel="stylesheet" type="text/css" href="<? bloginfo( 'stylesheet_directory' ); ?>/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="<? bloginfo( 'stylesheet_directory' ); ?>/css/style.css">
 
-	<script type="text/javascript" src="<? bloginfo( 'stylesheet_directory' ); ?>/js/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
 	<script type="text/javascript" src="<? bloginfo( 'stylesheet_directory' ); ?>/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+	<script src="<? bloginfo( 'stylesheet_directory' ); ?>/js/jquery.counterup.min.js"></script>
+	<script src="<? bloginfo( 'stylesheet_directory' ); ?>/js/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="<? bloginfo( 'stylesheet_directory' ); ?>/js/javascript.js"></script>
 
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'zapto' ); ?></a>
 		<div class="header">
+
 	<div class="menu">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 					<div class="logo">
-						<a class="navbar-brand" href="#"><span>zapto </span>design</a>
+					<?php if(!empty($logo_editted)){?>
+
+						<a href="<?php echo the_permalink() ; ?>"><img src="<?php echo $logo_editted[0] ; ?>" alt=""></a>
+					<?php  } ?>
 					</div>
 				</div>
 				<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">

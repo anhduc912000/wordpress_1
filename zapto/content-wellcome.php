@@ -1,4 +1,5 @@
 <?php
+wp_reset_query(); 
 $wellcome_title = get_field('wellcome_title');
 $discription 	= get_field('discription');
 ?>
@@ -29,7 +30,7 @@ $discription 	= get_field('discription');
 				<?php } ?>
 			</div>
 
-		<?php } wp_reset_query(); ?>
+		<?php } ?>
 		</div>
 
 	</div>

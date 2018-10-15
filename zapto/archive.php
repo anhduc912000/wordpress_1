@@ -7,7 +7,7 @@
  * @package zapto
  */
 
-get_header();
+get_header('aboutPage');
 ?>
 
 	<div id="primary" class="content-area">

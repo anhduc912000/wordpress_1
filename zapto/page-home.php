@@ -21,6 +21,9 @@
 get_header();
 get_template_part('content','wellcome'); 
 get_template_part('content','recent_work'); 
+get_template_part('content','counter'); 
+get_template_part('content','team'); 
+get_template_part('content','service'); 
 
 ?>
 
